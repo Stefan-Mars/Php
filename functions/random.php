@@ -1,5 +1,5 @@
 <?php
-// if( empty($_GET['name'])) {
-//     $_GET['name'] = 'home';
-//     }
+if( empty($_GET['name'])) {
+    $_GET['content'] = 'home';
+    }
 ?>
