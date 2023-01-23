@@ -1,0 +1,68 @@
+html, body {
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+    background-color: aliceblue;
+    font-family: 'Barlow', sans-serif;
+}
+input {
+    margin: 3px;
+}
+
+img {
+    height: 19%;
+    width: 19%;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+    width: 50%;
+}
+nav{
+    top:0px;
+    background-color: black;
+    size: 100px;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+    text-align: justify;
+}
+.link:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+
+td{
+    transition: 0.2s;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+td:hover{
+    background-color: gray;
+    transition: 0.2s;
+}
