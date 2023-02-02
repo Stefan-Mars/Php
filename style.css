@@ -41,6 +41,7 @@ nav{
     top:0px;
     background-color: black;
     size: 100px;
+    
 }
 .link{
     text-decoration: none;
@@ -61,8 +62,10 @@ td{
 table{
     width: 100%;
     text-align: center;
+    
 }
 td:hover{
     background-color: gray;
     transition: 0.2s;
 }
+

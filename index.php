@@ -1,11 +1,12 @@
 <?php
     session_start();
-print_r($_SESSION);
     include 'bootstrap.php';
     bootstrap();
-    $home = Home();
-    $gallery = gallery();
-    $login = login();  
+    if (empty($_GET['content'])) {
+        $_GET['content'] = 'Home';
+    }
+    $content = call_user_func($_GET['content']);
+
 ?>
 
 <!DOCTYPE html>
@@ -22,30 +23,15 @@ print_r($_SESSION);
 <body>
     <nav>
         <table>
-        <td><a class="link"href="http://localhost/Sites/php/1php/01_function/?content=Home">Home</a></td>
-        <td><a class="link"href="http://localhost/Sites/php/1php/01_function/?content=Gallery">Gallery</a></td>
-        <td><a class="link"href="http://localhost/Sites/php/1php/01_function/?content=Login">Login</a></td>
-        <td><a class="link"href="http://localhost/Sites/php/1php/01_function/?content=Niks">Niks</a></td>
+        <td><a class="link"href="index.php?content=Home">Home</a></td>
+        <td><a class="link"href="index.php?content=Gallery">Gallery</a></td>
+        <td><a class="link"href="index.php?content=Login">Login</a></td>
+        <td><a class="link"href="index.php?content=cool">Cool</a></td>
         </table>
     </nav>
 
     <?php
-        if (empty($_GET['content'])) {
-            $_GET['content'] = 'Home';
-        }
-        echo 'je bent op de pagina ' . htmlspecialchars($_GET["content"])."<br>";
-        if ($_GET['content'] == 'Home') {
-            echo $home;
-        }
-        if($_GET['content'] == 'Gallery') {
-            echo $gallery;
-        }
-        if ($_GET['content'] == 'Login') {
-            echo $login;
-        }
-        print_r($_POST);
-
-        
+        echo $content;
     ?>
     <script src="index.js"></script>
 </body>

@@ -1,7 +1,7 @@
 <?php
 function gallery(){
     //Plaatjes in Website
-        $galleryrend = "<br><button onclick='klik()'>Klik voor Plaatjes</button><br>";
+        $galleryrend = "<button onclick='klik()'>Klik voor Plaatjes</button><br>";
         $galleryrend .= '<div class="hidden" class="container" id="iets">';
 
         $images = glob("GALLERY/*.{jpg,jpeg,gif,png,bmp,webp}", GLOB_BRACE);
