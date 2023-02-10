@@ -56,17 +56,19 @@ nav{
 }
 
 
-td{
+.navtd{
     transition: 0.2s;
     padding-top: 15px;
 }
-table{
+.navtb{
     width: 100%;
     text-align: center;
     
 }
-td:hover{
+.navtd:hover{
     background-color: gray;
     transition: 0.2s;
 }
-
+td{
+    border: 1px black solid;
+}

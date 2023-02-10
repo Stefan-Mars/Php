@@ -1,7 +1,25 @@
 <?php
 function login()
 {
-    
+    $conn = mysqli_connect('localhost', 'root', '', 'php');
+    if(!$conn){
+        die('Connection Failed' . mysqli_connect_error());
+    }
+
+    $result = mysqli_query($conn, 'SELECT * FROM `users`');
+
+    $collection = [];
+    if(mysqli_num_rows($result) > 0);{
+        while($row=mysqli_fetch_assoc($result))
+        {
+            $collection[]=$row;
+        }
+    }
+
+
+
+
+
     if (isset($_SESSION['status'])){
         $loginrend = '<form method= "post" action=""><input type="submit" id="loguit" name="loguit" value="Loguit"></form>';           
     }
@@ -9,16 +27,16 @@ function login()
         $loginrend = '<form method= "post" action=""><input name="username"id="login" placeholder="Username"></input><br>';
         $loginrend .= '<input name="password" placeholder= "Password"></input><br>';
         $loginrend .= '<input name="submit" type="submit"  value="login"></form>';
-        $loginrend .= 'username = admin<br>ww = admin';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {
             if (isset($_POST['password']) && isset($_POST["username"])) {
-                if (($_POST['password'] == 'admin') && ($_POST["username"] == 'admin')) {
+                foreach($collection as $value){
+                if (($_POST['password'] == $value['password']) && ($_POST["username"] == $value['username'])) {
                     $_SESSION['status'] = true;
-                    header("Refresh:0");
-
+                    header("Refresh:0"); 
                 }
+            }
             }
         }
         
