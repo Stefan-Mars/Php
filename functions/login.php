@@ -27,7 +27,6 @@ function login()
         $loginrend = '<form method= "post" action=""><input name="username" placeholder="Username"></input><br>';
         $loginrend .= '<input name= "password" placeholder= "Password"></input><br>';
         $loginrend .= '<input type="submit" id= "submit" name="submit" value="login"></form>';
-        $loginrend .= 'username = admin<br>ww = admin';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {
