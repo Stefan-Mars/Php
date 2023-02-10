@@ -21,12 +21,12 @@ function login()
 
 
     if (isset($_SESSION['status'])){
-        $loginrend = '<form method= "post" action=""><input type="submit" id="loguit" name="loguit" value="Loguit"></form>';           
+        $render = '<form method= "post" action=""><input type="submit" id="loguit" name="loguit" value="Loguit"></form>';           
     }
     else{
-        $loginrend = '<form method= "post" action=""><input name="username" placeholder="Username"></input><br>';
-        $loginrend .= '<input name= "password" placeholder= "Password"></input><br>';
-        $loginrend .= '<input type="submit" id= "submit" name="submit" value="login"></form>';
+        $render = '<form method= "post" action=""><input name="username" placeholder="Username"></input><br>';
+        $render .= '<input name= "password" placeholder= "Password"></input><br>';
+        $render .= '<input type="submit" id= "submit" name="submit" value="login"></form>';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {
@@ -46,13 +46,16 @@ function login()
         $_SESSION = [];
         header("Refresh:0");
     }
-
-
-    return $loginrend;
-    
-
-
-
-
-    
+    $render .= "<table>";
+    $render .= "<tr><td style='text-align: center;' colspan='4'>Users</td></tr>";
+    $render .= "<tr><td>Username</td><td>Password</td><td>ID</td><td>Profile</td></tr>";
+    foreach($collection as $value)
+    {
+        $render .= "<tr><td>".$value['username']."</td>";
+        $render .= "<td>".$value['password']."</td>";
+        $render .= "<td>".$value['id']."</td>";
+        $render .= "<td>".$value['profile']."</td>";
+    }
+    $render .= "</table>";
+    return $render;
 }
