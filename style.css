@@ -72,3 +72,7 @@ nav{
 td{
     border: 1px black solid;
 }
+.login{
+    display: grid;
+    place-items:  center;
+}
