@@ -1,7 +1,7 @@
 <?php
 function login()
 {
-    $conn = mysqli_connect('localhost', 'root', '', 'php');
+    $conn = mysqli_connect('rdbms.strato.de', 'dbu2577448', 'KabouterST06', 'dbs10041809');
     if (!$conn) {
         die('Connection Failed' . mysqli_connect_error());
     }
@@ -20,7 +20,7 @@ function login()
     } else {
         $render .= '<h2>Login</h2>';
         $render .= '<table><tr><form method= "post" action=""><input name="username" placeholder="Username"></input></tr>';
-        $render .= '<tr><input name= "password" placeholder= "Password"></input></tr>';
+        $render .= '<tr><input type="password"name= "password" placeholder= "Password"></input></tr>';
         $render .= '<tr><input type="submit" id= "submit" name="submit" value="login"></form></tr></table>';
     }
     if (!empty($_POST['submit'])) {
@@ -42,7 +42,7 @@ function login()
     $render .= "<h2>Create Account</h2>";
     $render .= "<table><form method= 'post' action='' >";
     $render .= '<tr><input name= "createUsername" placeholder= "Username"></input></tr>';
-    $render .= '<tr><input name= "createPassword" placeholder= "Password"></input></tr>';
+    $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password"></input></tr>';
     $render .= '<tr><input type="submit" id= "submit" name="submit"></tr>';
     $render .= "</form></table>";
     $render .= "<table>";
@@ -62,7 +62,6 @@ function login()
             $sql = "INSERT INTO users (id, username, password, profile)
         VALUES ('', '$createUsername', '$createPassword','1')";
             if ($conn->query($sql) === TRUE) {
-                echo "New Account created successfully";
                 $_SESSION['status'] = true;
                 header("Refresh:0");
             } else {

@@ -1,6 +1,6 @@
 <?php
 function query(){
-    $conn = mysqli_connect('localhost', 'root', '', 'php');
+    $conn = mysqli_connect('localhost', 'root', '', 'dbs10041809');
     if(!$conn){
         die('Connection Failed' . mysqli_connect_error());
     }
@@ -15,5 +15,3 @@ function query(){
         }
     }
 }
-
-?>
