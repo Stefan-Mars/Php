@@ -45,16 +45,18 @@ function login()
     $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password"></input></tr>';
     $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create"></tr>';
     $render .= "</form></table>";
-    $render .= "<table>";
-    $render .= "<tr><td style='text-align: center;' colspan='4'>Users</td></tr>";
-    $render .= "<tr><td>ID</td><td>Username</td><td>Password</td><td>Profile</td></tr>";
-    foreach ($collection as $value) {
-        $render .= "<tr><td>" . $value['id'] . "</td>";
-        $render .= "<td>" . $value['username'] . "</td>";
-        $render .= "<td>" . $value['password'] . "</td>";
-        $render .= "<td>" . $value['profile'] . "</td>";
+    if (isset($_SESSION['status'])) {
+        $render .= "<table>";
+        $render .= "<tr><td style='text-align: center;' colspan='4'>Users</td></tr>";
+        $render .= "<tr><td>ID</td><td>Username</td><td>Password</td><td>Profile</td></tr>";
+        foreach ($collection as $value) {
+            $render .= "<tr><td>" . $value['id'] . "</td>";
+            $render .= "<td>" . $value['username'] . "</td>";
+            $render .= "<td>" . $value['password'] . "</td>";
+            $render .= "<td>" . $value['profile'] . "</td>";
+        }
+        $render .= "</table>";
     }
-    $render .= "</table>";
     if (!empty($_POST['createUsername']) && !empty($_POST["createPassword"])) {
         if (isset($_POST['createUsername']) && isset($_POST["createPassword"])) {
             $createUsername = $_POST['createUsername'];
@@ -63,13 +65,11 @@ function login()
             VALUES ('', '$createUsername', '$createPassword','1')";
             if ($conn->query($sql) === TRUE) {
                 $_SESSION['status'] = true;
-                header("Refresh:0");}
-            else {
+                header("Refresh:0");
+            } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
-                echo "Username is already taken!";  
+                echo "Username is already taken!";
             }
-                
-            
         }
     }
     $render .= '</div>';
