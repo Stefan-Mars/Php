@@ -32,7 +32,6 @@ $content = call_user_func($_GET['content']);
             <td class="navtd"><a class="link" href="index.php?content=cool">Cool</a></td>
         </table>
     </nav>
-
     <?php
     echo $content;
     ?>

@@ -57,20 +57,19 @@ function login()
     $render .= "</table>";
     if (!empty($_POST['createUsername']) && !empty($_POST["createPassword"])) {
         if (isset($_POST['createUsername']) && isset($_POST["createPassword"])) {
-            foreach ($collection as $value) {
-                if (($_POST['createUsername'] != $value['username'])) {
-                    $createUsername = $_POST['createUsername'];
-                    $createPassword = $_POST['createPassword'];
-                    $sql = "INSERT INTO users (id, username, password, profile)
-                    VALUES ('', '$createUsername', '$createPassword','1')";
-                    if ($conn->query($sql) === TRUE) {
-                        $_SESSION['status'] = true;
-                        header("Refresh:0");}
-                    else {
-                        echo "Error: " . $sql . "<br>" . $conn->error;
-                    }
-                }
+            $createUsername = $_POST['createUsername'];
+            $createPassword = $_POST['createPassword'];
+            $sql = "INSERT INTO users (id, username, password, profile)
+            VALUES ('', '$createUsername', '$createPassword','1')";
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION['status'] = true;
+                header("Refresh:0");}
+            else {
+                //echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Username is already taken!";  
             }
+                
+            
         }
     }
     $render .= '</div>';
