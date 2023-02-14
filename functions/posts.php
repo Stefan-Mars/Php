@@ -1,5 +1,5 @@
 <?php
-function cool()
+function posts()
 {
     $conn = mysqli_connect('rdbms.strato.de', 'dbu2577448', 'KabouterST06', 'dbs10041809');
     if (!$conn) {
@@ -46,7 +46,7 @@ function cool()
 
     
     else{
-        $rend = "jij bent niet cool, want je bent niet ingelogd";
+        $rend = "jij kan de posts niet zien, want je bent niet ingelogd";
         
     }
     return $rend;
