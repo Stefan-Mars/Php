@@ -32,7 +32,6 @@ $content = call_user_func($_GET['content']);
     <nav>
         <table class="navtb">
             <td class="navtd"><a class="link" href="index.php?content=Home">Home</a></td>
-            <td class="navtd"><a class="link" href="index.php?content=Gallery">Gallery</a></td>
             <td class="navtd"><a class="link" href="index.php?content=posts">Posts</a></td>
             <?php
             if (isset($_SESSION['status'])){

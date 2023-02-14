@@ -24,5 +24,6 @@ function Home()
         $homerend .= $filecontent;
         $homerend .= '</code>';
         $homerend .= '</div>';
+        $homerend .= gallery();
         return $homerend;
 }
