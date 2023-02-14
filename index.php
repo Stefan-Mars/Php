@@ -44,9 +44,11 @@ $content = call_user_func($_GET['content']);
             ?>
         </table>
     </nav>
+    <div style='text-align:center; margin-top: 5px'>
     <?php
         echo $content;
     ?>
+    </div>
     <script src="index.js"></script>
 </body>
 
