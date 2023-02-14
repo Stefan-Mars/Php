@@ -46,14 +46,14 @@ function login()
     $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create"></tr>';
     $render .= "</form></table>";
     if (isset($_SESSION['status'])) {
-        $render .= "<table>";
+        $render .= "<table class='border'>";
         $render .= "<tr><td style='text-align: center;' colspan='4'>Users</td></tr>";
         $render .= "<tr><td>ID</td><td>Username</td><td>Password</td><td>Profile</td></tr>";
         foreach ($collection as $value) {
-            $render .= "<tr><td>" . $value['id'] . "</td>";
-            $render .= "<td>" . $value['username'] . "</td>";
-            $render .= "<td>" . $value['password'] . "</td>";
-            $render .= "<td>" . $value['profile'] . "</td>";
+            $render .= "<tr><td class='info'>" . $value['id'] . "</td>";
+            $render .= "<td class='info'>" . $value['username'] . "</td>";
+            $render .= "<td class='info'>" . $value['password'] . "</td>";
+            $render .= "<td class='info'>" . $value['profile'] . "</td>";
         }
         $render .= "</table>";
     }
