@@ -98,6 +98,7 @@ nav {
 .post{
     margin: 3px;
     max-width: 20%;
+    overflow-wrap: break-word;
 }
 textarea {
     resize: none;
