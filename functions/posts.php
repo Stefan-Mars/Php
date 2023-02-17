@@ -16,8 +16,8 @@ function posts()
     }
     if (isset($_SESSION['status'])){
         $rend = "<form method= 'post' action=''>";
-        $rend .= "<textarea rows='1'cols='25'name='createTitel' placeholder='Titel'></textarea><br>";
-        $rend .= "<textarea rows='3'cols='25'name='createPost'placeholder='Tekst'></textarea><br>";
+        $rend .= "<textarea rows='1'cols='25'name='createTitel' placeholder='Titel' required></textarea><br>";
+        $rend .= "<textarea rows='3'cols='25'name='createPost'placeholder='Tekst' required></textarea><br>";
         $rend .= "<button type='submit'>Post</button><br>";
         $rend .= "</form>";
         $rend .= "<div class='container'>";

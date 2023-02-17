@@ -9,6 +9,7 @@ function Home()
         $homerend = '<div class="home">';
         $homerend .= '<h1>Welkom</h1>';
         $homerend .= 'Login en maak daarna een post';
+        $homerend .= '<a href="https://rickjanssenic1e.nl">Rick janssen</a>';
         // $homerend .= '<table><form action="" method="post">';
         // $homerend .= '<tr><input name="Antwoord1" placeholder="Getal 1"></input></tr>';
         // $homerend .= '<tr><input name="Antwoord2" placeholder="Getal 2"></input></tr>';

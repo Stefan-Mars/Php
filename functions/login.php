@@ -20,8 +20,8 @@ function login()
     } else {
         $render .= '<h2>Login</h2>';
         $render .= '<table><tr><form method= "post" action=""><input name="username" placeholder="Username"></input></tr>';
-        $render .= '<tr><input type="password"name= "password" placeholder= "Password"></input></tr>';
-        $render .= '<tr><input type="submit" id= "submit" name="submit" value="Login"></form></tr></table>';
+        $render .= '<tr><input type="password"name= "password" placeholder= "Password" required></input></tr>';
+        $render .= '<tr><input type="submit" id= "submit" name="submit" value="Login" required></form></tr></table>';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {
@@ -41,9 +41,9 @@ function login()
     }
     $render .= "<h2>Create Account</h2>";
     $render .= "<table><form method= 'post' action='' >";
-    $render .= '<tr><input name= "createUsername" placeholder= "Username"></input></tr>';
-    $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password"></input></tr>';
-    $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create"></tr>';
+    $render .= '<tr><input name= "createUsername" placeholder= "Username" required></input></tr>';
+    $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password" required></input></tr>';
+    $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create" required></tr>';
     $render .= "</form></table>";
     if (isset($_SESSION['status'])) {
         $render .= "<table class='border'>";

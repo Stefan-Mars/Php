@@ -25,7 +25,7 @@ $content = call_user_func($_GET['content']);
             include $filename;
         } ?>
     </style>
-    <title>Functions</title>
+    <title>Epische Site</title>
 </head>
 
 <body>
