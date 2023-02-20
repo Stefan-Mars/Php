@@ -14,14 +14,16 @@ function login()
             $collection[] = $row;
         }
     }
+    if (!isset($_POST['register'])) {
     $render = '<div class="login">';
     if (isset($_SESSION['status'])) {
-        $render .= '<form method= "post" action=""><input type="submit" id="loguit" name="loguit" value="Loguit"></form>';
+        $render .= '<form method= "post" action=""><input type="submit" id="loguit" name="loguit" value="Loguit"></form><br>';
     } else {
         $render .= '<h2>Login</h2>';
         $render .= '<table><tr><form method= "post" action=""><input name="username" placeholder="Username"></input></tr>';
         $render .= '<tr><input type="password"name= "password" placeholder= "Password" required></input></tr>';
         $render .= '<tr><input type="submit" id= "submit" name="submit" value="Login" required></form></tr></table>';
+        $render .= '<form method= "post" action=""><button id="rbutton"name="register"> Heb je geen account?</button></table>';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {
@@ -35,16 +37,12 @@ function login()
             }
         }
     }
+    
     if (!empty($_POST['loguit'])) {
         $_SESSION = [];
         header("Refresh:0");
     }
-    $render .= "<h2>Create Account</h2>";
-    $render .= "<table><form method= 'post' action='' >";
-    $render .= '<tr><input name= "createUsername" placeholder= "Username" required></input></tr>';
-    $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password" required></input></tr>';
-    $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create" required></tr>';
-    $render .= "</form></table>";
+}
     if (isset($_SESSION['status'])) {
         $render .= "<table class='border'>";
         $render .= "<tr><td>ID</td><td>Username</td><td>Password</td><td>Profile</td></tr>";
@@ -55,6 +53,16 @@ function login()
             $render .= "<td class='info'>" . $value['profile'] . "</td>";
         }
         $render .= "</table>";
+    }
+    else{
+        if (isset($_POST['register'])) {
+            $render .= "<h2>Create Account</h2>";
+            $render .= "<table><form method= 'post' action='' >";
+            $render .= '<tr><input name= "createUsername" placeholder= "Username" required></input></tr>';
+            $render .= '<tr><input type="password" name= "createPassword" placeholder= "Password" required></input></tr>';
+            $render .= '<tr><input type="submit" id= "submit" name="submit" value="Create" required></tr>';
+            $render .= "</form></table>";
+        }
     }
     if (!empty($_POST['createUsername']) && !empty($_POST["createPassword"])) {
         if (isset($_POST['createUsername']) && isset($_POST["createPassword"])) {
