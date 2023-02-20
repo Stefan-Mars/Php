@@ -21,7 +21,7 @@
         $render .= "</form></tr></table>";
         
 
-        $render .= '<a href="index.php?content=login" id="rbutton"> Heb al een account?</a></div><br>';
+        $render .= '<a href="index.php?content=login" id="rbutton"> Heb al een account?</a><br></div>';
     if (!empty($_POST['createUsername']) && !empty($_POST["createPassword"])) {
         if (isset($_POST['createUsername']) && isset($_POST["createPassword"])) {
             $createUsername = $_POST['createUsername'];

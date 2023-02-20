@@ -23,7 +23,7 @@ function login()
         $render .= '<table><tr><form method= "post" action=""><input name="username" placeholder="Username"></input></tr>';
         $render .= '<tr><input type="password"name= "password" placeholder= "Password" required></input></tr>';
         $render .= '<tr><input type="submit" id= "submit" name="submit" value="Login" required></form></tr></table>';
-        $render .= '<a href="index.php?content=register" id="rbutton"> Heb je geen account?</a></div><br>';
+        $render .= '<a href="index.php?content=register" id="rbutton"> Heb je geen account?</a><br></div>';
     }
     if (!empty($_POST['submit'])) {
         if (empty($_SESSION['status'])) {

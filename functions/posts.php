@@ -31,8 +31,10 @@ function posts()
             if (isset($_POST['createPost']) && isset($_POST["createTitel"])) {
                 $createPost = $_POST['createPost'];
                 $createTitel = $_POST['createTitel'];
-                $sql = "INSERT INTO posts (id, Titel, Tekst)
-                VALUES ('', '$createTitel', '$createPost')";
+                $_SESSION['userid'] = 1;
+    
+                $sql = "INSERT INTO posts (id, Titel, Tekst, userid)
+                        VALUES ('', '$createTitel', '$createPost', 1)";
                 if ($conn->query($sql) === TRUE) {
                     $_SESSION['status'] = true;
                     header("Refresh:0");

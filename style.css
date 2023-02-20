@@ -90,8 +90,7 @@ nav{
 .login {
     display: grid;
     place-items: center;
-    margin-left: 42%;
-    margin-right: 42%;
+    width: 15%;
     box-shadow: 2px 2px 2px 2px #888888;
     border-radius: 5px;
 }
