@@ -47,7 +47,6 @@ function login()
     $render .= "</form></table>";
     if (isset($_SESSION['status'])) {
         $render .= "<table class='border'>";
-        $render .= "<tr><td style='text-align: center;' colspan='4'>Users</td></tr>";
         $render .= "<tr><td>ID</td><td>Username</td><td>Password</td><td>Profile</td></tr>";
         foreach ($collection as $value) {
             $render .= "<tr><td class='info'>" . $value['id'] . "</td>";

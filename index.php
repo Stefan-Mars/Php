@@ -31,9 +31,9 @@ $content = call_user_func($_GET['content']);
 <body>
     <nav>
         <table class="navtb">
-            <td class="navtd"><a class="link" href="index.php?content=Home">Home</a></td>
-            <td class="navtd"><a class="link" href="index.php?content=posts">Posts</a></td>
             <?php
+            echo "<td class='navtd'><a class='link' href='index.php?content=Home'>Home</a></td>";
+            echo "<td class='navtd'><a class='link' href='index.php?content=posts'>Posts</a></td>";
             if (isset($_SESSION['status'])){
                 echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Ingelogd</a></td>";
             }

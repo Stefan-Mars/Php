@@ -65,12 +65,17 @@ nav {
     transition: 0.2s;
     padding-top: 15px;
     width: 25%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+nav{
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .navtb {
     width: 100%;
     text-align: center;
-
 }
 
 .navtd:hover {
