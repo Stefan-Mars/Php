@@ -31,6 +31,7 @@
             if ($conn->query($sql) === TRUE) {
                 $_SESSION['status'] = true;
                 header("Refresh:0");
+                $_SESSION['ingelogde'] = $_POST['createUsername'];;
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
                 echo "Username is already taken!";

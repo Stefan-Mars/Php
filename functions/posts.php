@@ -6,7 +6,7 @@ function posts()
         die('Connection Failed' . mysqli_connect_error());
     }
 
-    $result = mysqli_query($conn, 'SELECT `posts`.`id`, Titel, Tekst, username FROM `posts`, `users` WHERE `users`.`id` = `posts`.`userid`');
+    $result = mysqli_query($conn, 'SELECT `posts`.`id`, Titel, Tekst, pUsername FROM `posts`, `users` WHERE `users`.`id` = `posts`.`userid`');
     $collection = [];
     if (mysqli_num_rows($result) > 0); {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -22,7 +22,7 @@ function posts()
         $rend .= "<div class='container'>";
         foreach ($collection as $value) {
             $rend .= "<div class='post'><table class='border'>";
-            $rend .= "<tr><td style='text-align: left'><b>" . $value['Titel']."</b></td><td>". $value['username']."</td></tr>";
+            $rend .= "<tr><td style='text-align: left'><b>" . $value['Titel']."</b></td><td>". $value['pUsername']."</td></tr>";
             $rend .= "<tr><td>" . $value['Tekst']."</td></tr>";
             $rend .= "</table></div>";
         }
@@ -31,10 +31,8 @@ function posts()
             if (isset($_POST['createPost']) && isset($_POST["createTitel"])) {
                 $createPost = $_POST['createPost'];
                 $createTitel = $_POST['createTitel'];
-                $_SESSION['userid'] = 1;
-    
-                $sql = "INSERT INTO posts (id, Titel, Tekst, userid)
-                        VALUES ('', '$createTitel', '$createPost', 1)";
+                $sql = "INSERT INTO posts (id, Titel, Tekst, userid, pUsername)
+                        VALUES ('', '$createTitel', '$createPost', '".$_SESSION['userid']."','".$_SESSION['ingelogde']."')";
                 if ($conn->query($sql) === TRUE) {
                     $_SESSION['status'] = true;
                     header("Refresh:0");

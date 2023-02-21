@@ -32,6 +32,7 @@ function login()
                     if (($_POST['password'] == $value['password']) && ($_POST["username"] == $value['username'])) {
                         $_SESSION['status'] = true;
                         header("Refresh:0");
+                        $_SESSION['ingelogde'] = $value['username'];
                     }
                 }
             }
