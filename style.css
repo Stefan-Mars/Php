@@ -101,9 +101,9 @@ nav{
     color: black;
     margin: 3px;
     max-width: 30%;
-    overflow-wrap: break-word;
     background-color: #BB86FC;
     border-radius: 2.5px;
+    overflow-wrap: break-word;
 }
 textarea {
     resize: none;
@@ -135,4 +135,10 @@ button{
     margin-top: 5px; 
     display: grid;
     place-items: center;
+}
+#profilepic{
+    background-color: white;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
 }

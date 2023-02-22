@@ -22,8 +22,11 @@ function posts()
         $rend .= "<div class='container'>";
         foreach ($collection as $value) {
             $rend .= "<div class='post'><table>";
-            $rend .= "<tr><td style='text-align: left'><b>" . $value['Titel']."</b></td><td>". $value['pUsername']."</td></tr>";
-            $rend .= "<tr><td>" . $value['Tekst']."</td></tr>";
+            $rend .= "<tr>";
+            $rend .= "<td style='vertical-align: text-top; text-align: left;'><b>" . $value['Titel']."</b></td>";
+            $rend .= "<td style='text-align: center;'><div style='float: right;' id='profilepic'></div></td>";
+            $rend .= "</tr>";
+            $rend .= "<tr><td>".$value['Tekst']."</td><td><div style='text-align:right;'>".$value['pUsername']."</div></td></tr>";
             $rend .= "</table></div>";
         }
         $rend .= "<div>";
