@@ -3,8 +3,9 @@ body {
     scroll-behavior: smooth;
     margin: 0px;
     padding: 0px;
-    background-color: aliceblue;
+    background-color: #000000;
     font-family: 'Barlow', sans-serif;
+    color: white;
 }
 
 input {
@@ -32,13 +33,6 @@ img {
     display: block;
 }
 
-.code {
-    background-color: #eee;
-    border: 1px solid #999;
-    display: block;
-    padding: 5px;
-    width: 50%;
-}
 
 nav {
     top: 0px;
@@ -59,8 +53,12 @@ nav {
     display: inline-block;
     width: 100%;
 }
-
-
+.navtr{
+    background-color: black;
+}
+.navtd{
+    background-color: #121212
+}
 .navtd {
     transition: 0.2s;
     padding-top: 15px;
@@ -83,15 +81,12 @@ nav{
     transition: 0.2s;
 }
 
-.info {
-    border: 1px black solid;
-}
 
 .login {
     display: grid;
     place-items: center;
     width: 15%;
-    box-shadow: 2px 2px 2px 2px #888888;
+    border: 2px solid white;
     border-radius: 5px;
 }
 
@@ -100,13 +95,15 @@ nav{
     place-items: center;
 }
 .border {
-    box-shadow: 1px 1px 1px 1px #888888;
     border-radius: 5px;
 }
 .post{
+    color: black;
     margin: 3px;
-    max-width: 20%;
+    max-width: 30%;
     overflow-wrap: break-word;
+    background-color: #BB86FC;
+    border-radius: 2.5px;
 }
 textarea {
     resize: none;
@@ -120,4 +117,22 @@ textarea {
 	cursor: pointer;
 	outline: inherit;
     text-decoration: underline;
+}
+textarea{
+    border-radius: 5px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+button{
+    color:white;
+    background-color: black;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.main{
+    text-align:center; 
+    margin-top: 5px; 
+    display: grid;
+    place-items: center;
 }

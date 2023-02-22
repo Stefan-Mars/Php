@@ -21,7 +21,7 @@ function posts()
         $rend .= "</form>";
         $rend .= "<div class='container'>";
         foreach ($collection as $value) {
-            $rend .= "<div class='post'><table class='border'>";
+            $rend .= "<div class='post'><table>";
             $rend .= "<tr><td style='text-align: left'><b>" . $value['Titel']."</b></td><td>". $value['pUsername']."</td></tr>";
             $rend .= "<tr><td>" . $value['Tekst']."</td></tr>";
             $rend .= "</table></div>";

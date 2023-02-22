@@ -32,22 +32,18 @@ $content = call_user_func($_GET['content']);
     <nav>
         <table class="navtb">
             <?php
-            echo "<td class='navtd'><a class='link' href='index.php?content=Home'>Home</a></td>";
+            echo "<tr class='navtr'><td class='navtd'><a class='link' href='index.php?content=Home'>Home</a></td>";
             echo "<td class='navtd'><a class='link' href='index.php?content=posts'>Posts</a></td>";
             if (isset($_SESSION['status'])){
-                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Ingelogd</a></td>";
+                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Ingelogd</a></td></tr>";
             }
             else{
-                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Inloggen</a></td>";
+                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Inloggen</a></td></tr>";
             }
             ?>
         </table>
     </nav>
-    <div 
-    style='text-align:center; 
-    margin-top: 5px; 
-    display: grid;
-    place-items: center;'>
+    <div class='main'>
     <?php
         echo $content;
     ?>
