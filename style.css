@@ -63,12 +63,12 @@ nav {
     transition: 0.2s;
     padding-top: 15px;
     width: 25%;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 nav{
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 
 .navtb {
@@ -141,4 +141,7 @@ button{
     border-radius: 100%;
     width: 30px;
     height: 30px;
+}
+.active {
+    color: #F00;
 }

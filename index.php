@@ -32,6 +32,7 @@ $content = call_user_func($_GET['content']);
     <nav>
         <table class="navtb">
             <?php
+
             echo "<tr class='navtr'><td class='navtd'><a class='link' href='index.php?content=Home'>Home</a></td>";
             echo "<td class='navtd'><a class='link' href='index.php?content=posts'>Posts</a></td>";
             if (isset($_SESSION['status'])){
@@ -48,7 +49,7 @@ $content = call_user_func($_GET['content']);
         echo $content;
     ?>
     </div>
-    <script src="index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>

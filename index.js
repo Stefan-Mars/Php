@@ -1,8 +1,5 @@
-function klik() {
-    if (document.getElementById("iets").className == "hidden") {
-        document.getElementById("iets").className = "show";
-    }
-    else {
-        document.getElementById("iets").className = "hidden";
+function activePage(pageName){
+    if (window.location.search.substr(1) == pageName){
+        return "style='color: red;'"
     }
 }

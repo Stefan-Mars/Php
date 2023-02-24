@@ -34,7 +34,7 @@
                 foreach ($collection as $value) {
                         $_SESSION['userid'] = $value['id'];
                 }
-                header("Refresh:0");
+                header("Location: https://stefanmars.nl/index.php?content=Home");
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
                 echo "Username is already taken!";

@@ -33,7 +33,7 @@ function login()
                         $_SESSION['status'] = true;
                         $_SESSION['ingelogde'] = $value['username'];
                         $_SESSION['userid'] = $value['id'];
-                        header("Refresh:0");
+                        header("Location: https://stefanmars.nl/index.php?content=Home");
                     }
                 }
             }

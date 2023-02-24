@@ -49,6 +49,7 @@ function posts()
     
     else{
         $rend = "jij kan de posts niet zien, want je bent niet ingelogd";
+        $rend .= '<a href="index.php?content=login" id="rbutton">Log hier in</a><br></div>';
         
     }
     return $rend;
