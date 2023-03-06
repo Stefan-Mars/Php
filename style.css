@@ -56,10 +56,8 @@ nav {
 .navtr{
     background-color: black;
 }
-.navtd{
-    background-color: #121212
-}
 .navtd {
+    background-color: #121212;
     transition: 0.2s;
     padding-top: 15px;
     width: 25%;

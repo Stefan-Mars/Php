@@ -32,14 +32,19 @@ $content = call_user_func($_GET['content']);
     <nav>
         <table class="navtb">
             <?php
+            function activePage($pageName){
+                if ($_GET['content'] == $pageName){
+                    return "style='color: #BB86FC;'";
+                }
+            }
 
-            echo "<tr class='navtr'><td class='navtd'><a class='link' href='index.php?content=Home'>Home</a></td>";
-            echo "<td class='navtd'><a class='link' href='index.php?content=posts'>Posts</a></td>";
+            echo "<tr class='navtr'><td class='navtd'><a class='link' href='index.php?content=Home' ".activePage('Home')."'>Home</a></td>";
+            echo "<td class='navtd'><a class='link' href='index.php?content=posts'".activePage('posts').">Posts</a></td>";
             if (isset($_SESSION['status'])){
-                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Ingelogd</a></td></tr>";
+                echo "<td class='navtd'><a class='link' href='index.php?content=Login'".activePage('Login').">Ingelogd</a></td></tr>";
             }
             else{
-                echo "<td class='navtd'><a class='link' href='index.php?content=Login'>Inloggen</a></td></tr>";
+                echo "<td class='navtd'><a class='link' href='index.php?content=Login'".activePage('Login').">Inloggen</a></td></tr>";
             }
             ?>
         </table>
@@ -49,7 +54,7 @@ $content = call_user_func($_GET['content']);
         echo $content;
     ?>
     </div>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript"></script>
 </body>
 
 </html>
