@@ -13,3 +13,4 @@ function Home()
         $homerend .= '</div>';
         return $homerend;
 }
+?>

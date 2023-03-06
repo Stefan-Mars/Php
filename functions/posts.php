@@ -54,3 +54,4 @@ function posts()
     }
     return $rend;
 }
+?>
